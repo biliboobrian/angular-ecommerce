@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ecommerce-e8ddf": {
+      "hosting": {
+        "angular-ecommerce": [
+          "ecommerce-e8ddf"
+        ]
+      }
+    }
+  }
+}

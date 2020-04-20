@@ -1,0 +1,20 @@
+<div class="d-flex justify-content-center mt-5">
+    <div class="col-sm-8 col-md-6 col-lg-4 col-xl-3">
+        <form class="m-auto text-center" [formGroup]="registerForm">
+            <h1 class="h3 mb-3 font-weight-normal">Mon resto</h1>
+            <label for="inputEmail" class="sr-only">Adresse email</label>
+            <input type="email" formControlName="email" id="inputEmail" class="form-control" placeholder="Email address"
+                required autofocus>
+            <label for="inputPassword" class="sr-only">Mot de passe</label>
+            <input type="password" id="inputPassword" formControlName="password" class="form-control rounded-0"
+                placeholder="Password" required>
+            <div class="checkbox mb-3">
+                <label class="error">{{errorMessage}}</label>
+                <label class="success">{{successMessage}}</label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit"
+            (click)="tryRegister(registerForm.value)">Connexion</button>
+            <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+        </form>
+    </div>
+</div>
