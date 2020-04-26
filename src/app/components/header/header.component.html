@@ -1,10 +1,25 @@
-<div class="navbar navbar-expand-md fixed-top border-bottom bg-white">
-    <div class="container d-flex">
-        <h5 class="my-0 mr-md-auto font-weight-normal">Mon resto</h5>
-        <nav class="my-2 my-md-0 mr-md-3">
-            <a class="p-2 text-dark" href="#">La carte</a>
-            <a class="p-2 text-dark" href="#">Nous contacter</a>
-        </nav>
-        <a class="btn btn-outline-primary" href="#">Commander à emporter</a>
+<nav class="navbar navbar-dark navbar-expand-md border-bottom fixed-top bg-header">
+    <div class="container-md d-flex">
+        <a class="navbar-brand" routerLink="/" routerLinkActive="active">Mon resto</a>
+        <button class="p-2 btn text-white d-md-none border rounded" routerLink="/order">Commander</button>
+        <button class="navbar-toggler hidden-sm-up" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed"
+            data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
+            <ul class="navbar-nav mr-auto dropdown" ngbDropdown>
+                <li class="nav-item p-2">
+                    <a class="text-white" routerLink="/card" routerLinkActive="active">La carte</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="text-white" routerLink="/contact-us" routerLinkActive="active">Nous contacter</a>
+                </li>
+            </ul>
+            <button class="p-2 btn text-white d-none d-md-inline border rounded" routerLink="/order">Commander à
+                emporter</button>
+        </div>
+
     </div>
-</div>
+</nav>

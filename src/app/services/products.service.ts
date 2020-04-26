@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { Product } from '../models/product.model';
+import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore';
+import { Product } from '../models/product';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -12,18 +13,42 @@ export class ProductsService {
     ) { }
 
   getProducts() {
-    return this.firestore.collection('products').snapshotChanges();
+    return this.firestore.collection<Product>('Products').snapshotChanges().pipe(
+      map((res: DocumentChangeAction<Product>[]) => {
+        const products: Product[] = [];
+        res.forEach((result: DocumentChangeAction<Product>) => {
+          const data = result.payload.doc.data();
+          products.push({
+            id: result.payload.doc.id,
+            ...data
+          })
+        })
+        return products;
+      })
+    );
+  }
+
+  getProduct(id: string) {
+    return this.firestore.doc<Product>(`Products/${id}`).snapshotChanges().pipe(
+      map(result => {
+        const product: Product = {
+          id: result.payload.id,
+          ...result.payload.data()
+        } as Product;
+        return product;
+      })
+    );
   }
 
   createProduct(product: Product) {
-    return this.firestore.collection('products').add(product);
+    return this.firestore.collection<Product>('Products').add({ ...product });
   }
 
   updateProduct(product: Product) {
-    return this.firestore.doc(`products/${product.id}`).update(product);
+    return this.firestore.doc<Product>(`Products/${product.id}`).update(product);
   }
 
-  deleteProduct(product: Product) {
-    this.firestore.doc(`products/${product.id}`).delete();
+  deleteProduct(id: string) {
+    this.firestore.doc<Product>(`Products/${id}`).delete();
   }
 }

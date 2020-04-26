@@ -2,3 +2,7 @@
 body {
     /* background-image: url('./assets/background.jpg'); */
 }
+
+.bg-header {
+    background-color: #000000AA;
+}

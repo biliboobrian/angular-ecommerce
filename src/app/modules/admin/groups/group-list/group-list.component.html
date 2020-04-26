@@ -1,0 +1,40 @@
+<ng-template #deletion let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Supprimer un groupe</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <span>êtes-vous sûr de vouloir supprimer ?</span>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Supprimer</button>
+    </div>
+</ng-template>
+
+
+<div class="row">
+    <div class="col-6 pb-2">
+        <button type="button" class="btn btn-primary" (click)="addGroup()">Ajouter</button>
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Nom</th>
+            <th class="btn-width" scope="col">#</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let group of groups; index as i">
+            <td>{{ group.name }}</td>
+            <td>
+                <button class="btn btn-primary btn-sm" (click)="editGroup(group)"><i class="fa fa-edit"></i></button>
+                <button class="btn btn-danger btn-sm ml-2" (click)="confirmDelete(deletion, group)"><i
+                        class="fa fa-trash"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>

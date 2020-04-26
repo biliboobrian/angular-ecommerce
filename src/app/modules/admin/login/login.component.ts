@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-login',
+  selector: 'admin-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     this.authService.signIn(value.email, value.password)
     .then(res => {
       console.log(res);
-      this.router.navigate(['admin','home']);
+      this.router.navigate(['admin']);
     }, err => {
       console.log(err);
       this.errorMessage = err.message;
