@@ -1,0 +1,52 @@
+<div class="card-bg"></div>
+
+<div class="container-md text-white">
+    <div class="padding-card-menu col-12 text-center">
+        <h2>{{ config?.menu.card }}</h2>
+    </div>
+    <div class="col-12 text-center pb-3">
+        <ng-container *ngFor="let group of groups; let index = index">
+            <button routerLink="/card/{{ group.url }}" type="button"
+                class="btn btn-link ec-link">{{ group.name }}</button>
+            <span *ngIf="index < groups.length - 1">|</span>
+        </ng-container>
+
+    </div>
+    <div class="row">
+        <div *ngFor="let product of products" class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-3 mb-xl-0">
+            <div class="h-100 card mb-4 shadow-sm text-dark mb-2 mb-xl-0">
+                <div class="ec-container bg-secondary rounded-top">
+                    <img *ngIf="product.img" src="./assets/{{ product.img }}"
+                        class="rounded-top ec-card-image ec-container" />
+                </div>
+                <div class="d-flex card-body flex-column">
+                    <h6>{{ product.name }}</h6>
+                    <p class="card-text small">{{ product.description }}</p>
+                    <h5 class="text-right d-none d-sm-block mt-auto">{{ product.price | number:'.2'}} €</h5>
+                    <div class="d-flex align-items-center">
+                        <div class="input-group mt-3">
+                            <div class="input-group-prepend">
+                                <button class="btn px-3 py-0 custom-font-size text-dark border" type="button" (click)="substract(product.id)">
+                                    <i class="fa fa-minus small"></i>
+                                </button>
+                            </div>
+                            <input type="text" class="form-control text-right" [(ngModel)]="toAdd[product.id]" />
+                            <div class="input-group-append">
+                                <button
+                                    class="btn px-3 py-0 custom-font-size text-dark border-top border-bottom rounded-0"
+                                    type="button" (click)="add(product.id)">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                                <button class="btn btn-primary" type="button"
+                                    (click)="addToCart(product.id)">Ajouter</button>
+                            </div>
+                        </div>
+                        <h5 class="custom-price mt-4 text-right d-block d-sm-none">{{ product.price | number:'.2'}} €
+                        </h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

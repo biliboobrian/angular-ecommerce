@@ -21,7 +21,9 @@ export class ProductDetailComponent implements OnInit {
     name: new FormControl('', Validators.required),
     groupId:  new FormControl('', Validators.required),
     description: new FormControl(''),
-    price: new FormControl('', [Validators.min(0), Validators.required])
+    img: new FormControl(''),
+    price: new FormControl('', [Validators.min(0), Validators.required]),
+    onHome: new FormControl(''),
   });
 
   constructor(

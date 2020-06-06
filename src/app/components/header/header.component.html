@@ -1,25 +1,81 @@
-<nav class="navbar navbar-dark navbar-expand-md border-bottom fixed-top bg-header">
-    <div class="container-md d-flex">
-        <a class="navbar-brand" routerLink="/" routerLinkActive="active">Mon resto</a>
-        <button class="p-2 btn text-white d-md-none border rounded" routerLink="/order">Commander</button>
+<nav class="navbar navbar-dark navbar-expand-sm border-bottom fixed-top bg-header text-white">
+    <div class="container-lg d-flex">
+
+        <a class="navbar-brand d-none d-sm-block" (click)="isNavbarCollapsed = !isNavbarCollapsed"
+            data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false">
+            <img src="./assets/logo.png" class="logo" />
+        </a>
         <button class="navbar-toggler hidden-sm-up" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed"
             data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <a class="navbar-brand" routerLink="/" routerLinkActive="active"
+            (click)="onLinkClick($event)">{{ config?.name }}</a>
+        <div>
+            <button class=" d-sm-none p-2 mr-2 btn border-0 text-white border rounded" [ngbTooltip]="tipContent"
+                triggers="click" tooltipClass="cart-container"><i class="fa" style="font-size:24px">&#xf07a;</i>
+                <span *ngIf="cartService.cart.getTotalItems() > 0" class='badge badge-warning' id='lblCartCount'>
+                    {{ cartService.cart.getTotalItems() }} </span></button>
+
+        </div>
+
 
         <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
             <ul class="navbar-nav mr-auto dropdown" ngbDropdown>
-                <li class="nav-item p-2">
-                    <a class="text-white" routerLink="/card" routerLinkActive="active">La carte</a>
+                <li class="nav-item p-md-2 p-3">
+                    <a class="text-white" (click)="onLinkClick($event)" routerLink="/card"
+                        routerLinkActive="active">{{ config?.menu.card }}</a>
                 </li>
-                <li class="nav-item p-2">
-                    <a class="text-white" routerLink="/contact-us" routerLinkActive="active">Nous contacter</a>
+                <li class="nav-item p-md-2 p-3">
+                    <a class="text-white" (click)="onLinkClick($event)" routerLink="/contact-us"
+                        routerLinkActive="active">{{ config?.menu.contactUs }}</a>
                 </li>
             </ul>
-            <button class="p-2 btn text-white d-none d-md-inline border rounded" routerLink="/order">Commander à
-                emporter</button>
+            <button class="p-2 btn border-0 text-white d-none d-sm-inline border rounded" [ngbTooltip]="tipContent"
+                triggers="click" tooltipClass="cart-container">
+                <i class="fa" style="font-size:24px">&#xf07a;</i>
+                <span *ngIf="cartService.cart.getTotalItems() > 0" class='badge badge-warning' id='lblCartCount'>
+                    {{ cartService.cart.getTotalItems() }} </span>
+            </button>
         </div>
 
     </div>
 </nav>
+
+
+<ng-template #tipContent>
+    <ng-container *ngIf="cartService.cart.items.length > 0">
+        <ng-container *ngFor="let cartItem of cartService.cart.items; let i = index">
+            <div class="row m-0 py-2 border-bottom border-secondary">
+                <div class="col-12 p-0">
+                    <div class="float-left">{{ cartItem.nb }} x {{ cartItem.product.name }}</div>
+                    <div class="float-right">{{ cartItem.getTotal() | number:'.2'}} € <button
+                            class="btn pb-1 pt-0 border-0" type="button" (click)="remove($event, cartItem)">
+                            <i class="fa fa-times"></i>
+                        </button></div>
+
+                </div>
+            </div>
+        </ng-container>
+
+        <div class="row m-0 py-2">
+            <div class="col-12 py-0 pl-1 text-left">
+                <h3 class="d-inline">{{ cartService.cart.getTotalPrice() | number:'.2'}} €</h3>
+                <div class="float-right">
+                    <button class="btn btn-outline-secondary" type="button" routerLink="/order">
+                        Commander
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="cartService.cart.items.length == 0">
+        <div class="py-3">
+            Votre commande est vide.
+        </div>
+
+    </ng-container>
+
+</ng-template>

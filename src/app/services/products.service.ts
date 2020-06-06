@@ -12,8 +12,15 @@ export class ProductsService {
     private firestore: AngularFirestore
     ) { }
 
-  getProducts() {
-    return this.firestore.collection<Product>('Products').snapshotChanges().pipe(
+  getProducts(inHome: boolean) {
+    return this.firestore.collection<Product>('Products', ref => {
+      if(inHome) {
+        return ref.where('onHome', '==', inHome);
+      } else {
+        return ref;
+      }
+
+    }).snapshotChanges().pipe(
       map((res: DocumentChangeAction<Product>[]) => {
         const products: Product[] = [];
         res.forEach((result: DocumentChangeAction<Product>) => {

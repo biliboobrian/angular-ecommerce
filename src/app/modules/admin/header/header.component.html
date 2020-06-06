@@ -7,15 +7,21 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown" ngbDropdown>
-                    <a class="p-2 text-white" routerLink="/admin/orders" routerLinkActive="active">Commandes</a>
-                    <a class="p-2 text-white" routerLink="/admin/groups" routerLinkActive="active">Groupes</a>
-                    <a class="p-2 text-white" routerLink="/admin/products" routerLinkActive="active">Produits</a>
-                    <a class="p-2 text-white" routerLink="/admin/settings" routerLinkActive="active">Paramètres</a>
+            <ul class="navbar-nav mr-auto dropdown" ngbDropdown>
+                <li class="nav-item p-md-2 p-3">
+                    <a class="text-white" routerLink="/admin/orders" routerLinkActive="active">Commandes</a>
+                </li>
+                <li class="nav-item p-md-2 p-3">
+                    <a class="text-white" routerLink="/admin/groups" routerLinkActive="active">Groupes</a>
+                </li>
+                <li class="nav-item p-md-2 p-3">
+                    <a class="text-white" routerLink="/admin/products" routerLinkActive="active">Produits</a>
+                </li>
+                <li class="nav-item p-md-2 p-3">
+                    <a class="text-white" routerLink="/admin/settings" routerLinkActive="active">Paramètres</a>
                 </li>
             </ul>
-            <button class="p-2 btn text-white" (click)="logOut()">Deconnexion</button>
+            <button class="p-2 btn text-white border rounded" (click)="logOut()">Deconnexion</button>
         </div>
         
     </div>

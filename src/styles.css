@@ -1,8 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    /* background-image: url('./assets/background.jpg'); */
+
 }
 
 .bg-header {
     background-color: #000000AA;
+}
+
+button {
+    text-decoration: none!important;
+    color: #fff!important;
+}
+
+button:hover {
+    color: #ddd !important;
+}
+
+a {
+    text-decoration: none!important;
+    color: #fff!important;
+}
+
+a:hover {
+    color: #ddd !important;
+}
+
+
+.cart-container {
+    width: calc(100% - 50px);
+    max-width: 400px;
+  }
+
+.cart-container .tooltip-inner {
+    width: 100%;
+    max-width: 400px;
 }

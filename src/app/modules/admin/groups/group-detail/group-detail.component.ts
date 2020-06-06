@@ -40,6 +40,8 @@ export class GroupDetailComponent implements OnInit {
     this.submitted = true;
 
     if (this.groupForm.valid) {
+      let group = this.groupForm.value;
+      group.url = group.name.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(' ', '-').toLowerCase();
       if (this.id) {
         this.groupsService.updateGroup({ id: this.id, ...this.groupForm.value }).then(() => {
           this.router.navigate(['admin', 'groups']);

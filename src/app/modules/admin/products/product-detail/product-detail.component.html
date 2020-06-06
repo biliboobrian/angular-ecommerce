@@ -17,6 +17,15 @@
             en dessous du produit dans le menu et sur les commandes.</small>
     </div>
     <div class="form-group">
+        <label for="img">Image</label>
+        <input type="text" formControlName="img" class="form-control" id="img" aria-describedby="imgHelp"
+            placeholder="Image .." [class.is-invalid]="submitted && !productForm.get('img').valid">
+        <div *ngIf="submitted && productForm.get('img').errors" class="invalid-feedback">
+            <div *ngIf="productForm.get('img').errors.required">Le nom du produit doit être renseigné</div>
+        </div>
+        <small id="imgHelp" class="form-text text-muted">Si vous voulez ajouter une image a votre produit, l'image doit se situer dans ./assets/products/, elle ne doit pas contenir d'espace ex: mon-produit.jpg</small>
+    </div>
+    <div class="form-group">
         <label for="group">Groupe de produits</label>
         <select class="form-control" formControlName="groupId" id="group">
             <option value="">Sélection du groupe ..</option>
@@ -37,6 +46,11 @@
             <div *ngIf="productForm.get('price').errors.required">Le prix du produit doit être renseigné</div>
         </div>
         <small id="priceHelp" class="form-text text-muted">Le prix unitaire de votre produit.</small>
+    </div>
+    <div class="form-group">
+        <input type="checkbox" class="form-check-input ml-1" id="onHome" formControlName="onHome">
+        <label for="onHome"class="ml-4">En page d'accueil</label>
+        <small id="onHomeHelp" class="form-text text-muted">Si vous voulez que ce produit soit mis en avant sur votre page d'accueil.</small>
     </div>
     <button type="submit" class="btn btn-primary">{{ (id) ? 'Modifier': 'Ajouter' }}</button>
     <button type="button" class="btn" (click)="back()">Retour</button>

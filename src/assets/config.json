@@ -1,0 +1,11 @@
+{
+    "name": "Mon resto",
+    "menu": {
+        "card": "Notre carte",
+        "contactUs": "Nous contacter",
+        "takeAway": "Commander à emporter"
+    },
+    "welcome": "Bienvenue",
+    "description": "Spécialité au homard, boulette de viande et frite salade."
+
+}
