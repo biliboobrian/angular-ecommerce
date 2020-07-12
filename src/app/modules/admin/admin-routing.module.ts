@@ -10,6 +10,8 @@ import { GroupDetailComponent } from './groups/group-detail/group-detail.compone
 import { ProductsComponent } from './products/products.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
+import { OrderListComponent } from './home/order-list/order-list.component';
+import { OrderDetailComponent } from './home/order-detail/order-detail.component';
 
 
 const routes: Routes = [
@@ -24,7 +26,21 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: HomeComponent
+        component: HomeComponent,
+        children: [
+          {
+            path: '',
+            component: OrderListComponent
+          },
+          {
+            path: 'add',
+            component: OrderDetailComponent
+          },
+          {
+            path: 'edit/:id',
+            component: OrderDetailComponent
+          }
+        ]
       },
       {
         path: 'groups',

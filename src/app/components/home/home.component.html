@@ -3,19 +3,23 @@
 <div class="container-fluid text-white">
     <div class="container-lg">
         <div class="px-3 mx-auto text-center home-welcome">
-            <h1 class="display-4">{{ config?.welcome }}</h1>
-            <p class="lead">{{ config?.description }}</p>
-            <button class="p-2 btn text-white d-md-none border rounded" routerLink="/order">{{ config?.menu.card }}</button>
+            <h1 class="display-4" i18n>Welcome</h1>
+            <p class="lead" i18n>Kebab and fish specialities</p>
+            <button class="p-2 btn text-white d-sm-none border rounded" routerLink="/card" i18n>Our card</button>
         </div>
     </div>
 </div>
 <div class="container-fluid">
-    <div class="container-lg">
+    <div class="container-lg p-0">
+        <div class="px-3 mx-auto text-center text-white">
+            <h4 i18n>Nos best-sellers</h4>
+        </div>
+        
         <div class="row justify-content-center">
             <div *ngFor="let product of products" class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-3 mb-xl-0">
                 <div class="h-100 card mb-4 shadow-sm text-dark mb-2 mb-xl-0">
                     <div class="ec-container bg-secondary rounded-top">
-                        <img *ngIf="product.img" src="../assets/{{ product.img }}"
+                        <img *ngIf="product.img" src="./assets/{{ product.img }}"
                             class="rounded-top ec-card-image ec-container" />
                     </div>
                     <div class="d-flex card-body flex-column">
@@ -29,7 +33,7 @@
                                         <i class="fa fa-minus small"></i>
                                     </button>
                                 </div>
-                                <input type="text" class="form-control text-right" [(ngModel)]="toAdd[product.id]" />
+                                <input type="number" class="form-control text-right" [(ngModel)]="toAdd[product.id]" />
                                 <div class="input-group-append">
                                     <button
                                         class="btn px-3 py-0 custom-font-size text-dark border-top border-bottom rounded-0"
@@ -37,7 +41,7 @@
                                         <i class="fa fa-plus"></i>
                                     </button>
                                     <button class="btn btn-primary" type="button"
-                                        (click)="addToCart(product.id)">Ajouter</button>
+                                        (click)="addToCart(product.id)" i18n>Add</button>
                                 </div>
                             </div>
                             <h5 class="custom-price mt-4 text-right d-block d-sm-none">{{ product.price | number:'.2'}} €
@@ -56,40 +60,7 @@
 
         <footer class="pt-4 my-md-5 pt-md-5 border-top">
             <div class="row">
-                <div class="col-12 col-md">
-                    <img class="mb-2" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt=""
-                        width="24" height="24">
-                    <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Features</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Cool stuff</a></li>
-                        <li><a class="text-muted" href="#">Random feature</a></li>
-                        <li><a class="text-muted" href="#">Team feature</a></li>
-                        <li><a class="text-muted" href="#">Stuff for developers</a></li>
-                        <li><a class="text-muted" href="#">Another one</a></li>
-                        <li><a class="text-muted" href="#">Last time</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Resources</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Resource</a></li>
-                        <li><a class="text-muted" href="#">Resource name</a></li>
-                        <li><a class="text-muted" href="#">Another resource</a></li>
-                        <li><a class="text-muted" href="#">Final resource</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>About</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Team</a></li>
-                        <li><a class="text-muted" href="#">Locations</a></li>
-                        <li><a class="text-muted" href="#">Privacy</a></li>
-                        <li><a class="text-muted" href="#">Terms</a></li>
-                    </ul>
-                </div>
+                
             </div>
         </footer>
     </div>

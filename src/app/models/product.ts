@@ -9,11 +9,13 @@ export class Product {
     outOfStock: boolean;
     price: number;
     quantity: number;
+    onHome: boolean;
 
     constructor(obj: any = null) {
         if (obj) {
             this.id = obj.id;
             this.groupId = obj.groupId;
+            this.name = obj.name;
             this.description = obj.description;
             this.img = obj.img;
             this.creationDate = obj.creationDate;

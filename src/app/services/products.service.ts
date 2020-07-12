@@ -2,60 +2,54 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore';
 import { Product } from '../models/product';
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
 
+  private obs: Observable<Product[]>;
+
   constructor(
     private firestore: AngularFirestore
     ) { }
 
-  getProducts(inHome: boolean) {
-    return this.firestore.collection<Product>('Products', ref => {
-      if(inHome) {
-        return ref.where('onHome', '==', inHome);
-      } else {
-        return ref;
-      }
+  getProducts(): Observable<Product[]> {
 
-    }).snapshotChanges().pipe(
-      map((res: DocumentChangeAction<Product>[]) => {
-        const products: Product[] = [];
-        res.forEach((result: DocumentChangeAction<Product>) => {
-          const data = result.payload.doc.data();
-          products.push({
-            id: result.payload.doc.id,
-            ...data
+    if(!this.obs) {
+      this.obs = new Observable<Product[]>(observer => {
+        this.firestore.collection<Product>('products').snapshotChanges().pipe(
+          map((res: DocumentChangeAction<Product>[]) => {
+            const products: Product[] = [];
+            
+            res.forEach((result: DocumentChangeAction<Product>) => {
+              const data = result.payload.doc.data();
+              products.push({
+                id: result.payload.doc.id,
+                ...data
+              })
+            });
+
+            return products;
           })
-        })
-        return products;
-      })
-    );
-  }
-
-  getProduct(id: string) {
-    return this.firestore.doc<Product>(`Products/${id}`).snapshotChanges().pipe(
-      map(result => {
-        const product: Product = {
-          id: result.payload.id,
-          ...result.payload.data()
-        } as Product;
-        return product;
-      })
-    );
+        ).subscribe(products => {
+          observer.next(products);
+        });
+      });
+    } 
+    return this.obs;
   }
 
   createProduct(product: Product) {
-    return this.firestore.collection<Product>('Products').add({ ...product });
+    return this.firestore.collection<Product>('products').add({ ...product });
   }
 
   updateProduct(product: Product) {
-    return this.firestore.doc<Product>(`Products/${product.id}`).update(product);
+    return this.firestore.doc<Product>(`products/${product.id}`).update(product);
   }
 
   deleteProduct(id: string) {
-    this.firestore.doc<Product>(`Products/${id}`).delete();
+    this.firestore.doc<Product>(`products/${id}`).delete();
   }
 }

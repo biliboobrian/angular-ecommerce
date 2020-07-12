@@ -1,30 +1,30 @@
 <ng-template #deletion let-modal>
     <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Supprimer un groupe</h4>
+        <h4 class="modal-title" id="modal-basic-title" i18n>Delete a group</h4>
         <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('')">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
     <div class="modal-body">
-        <span>êtes-vous sûr de vouloir supprimer ?</span>
+        <span i18n>You are about to suppress a group, continue ?</span>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Supprimer</button>
+        <button type="button" class="btn btn-danger" (click)="modal.close('Save click')" i18n>Delete</button>
     </div>
 </ng-template>
 
 
 <div class="row">
     <div class="col-6 pb-2">
-        <button type="button" class="btn btn-primary" (click)="addGroup()">Ajouter</button>
+        <button type="button" class="btn btn-primary" (click)="addGroup()" i18n>Add</button>
     </div>
 </div>
 
 <table class="table table-striped">
     <thead>
         <tr>
-            <th scope="col">Nom</th>
-            <th class="btn-width" scope="col">#</th>
+            <th scope="col" i18n>Name</th>
+            <th class="btn-width" scope="col" i18n>Action</th>
         </tr>
     </thead>
     <tbody>

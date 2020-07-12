@@ -14,10 +14,25 @@ import { GroupListComponent } from './groups/group-list/group-list.component';
 import { GroupDetailComponent } from './groups/group-detail/group-detail.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
+import { OrderListComponent } from './home/order-list/order-list.component';
+import { OrderDetailComponent } from './home/order-detail/order-detail.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, HomeComponent, MainComponent, HeaderComponent, GroupsComponent, ProductsComponent, GroupListComponent, GroupDetailComponent, ProductListComponent, ProductDetailComponent],
+  declarations: [
+    LoginComponent,
+    HomeComponent,
+    MainComponent,
+    HeaderComponent,
+    GroupsComponent,
+    ProductsComponent,
+    GroupListComponent,
+    GroupDetailComponent,
+    ProductListComponent,
+    ProductDetailComponent,
+    OrderListComponent,
+    OrderDetailComponent
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,

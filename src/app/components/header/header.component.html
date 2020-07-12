@@ -11,7 +11,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" routerLink="/" routerLinkActive="active"
-            (click)="onLinkClick($event)">{{ config?.name }}</a>
+            (click)="onLinkClick($event)" i18n>My restaurant</a>
         <div>
             <button class=" d-sm-none p-2 mr-2 btn border-0 text-white border rounded" [ngbTooltip]="tipContent"
                 triggers="click" tooltipClass="cart-container"><i class="fa" style="font-size:24px">&#xf07a;</i>
@@ -25,11 +25,11 @@
             <ul class="navbar-nav mr-auto dropdown" ngbDropdown>
                 <li class="nav-item p-md-2 p-3">
                     <a class="text-white" (click)="onLinkClick($event)" routerLink="/card"
-                        routerLinkActive="active">{{ config?.menu.card }}</a>
+                        routerLinkActive="active" i18n>Our card</a>
                 </li>
                 <li class="nav-item p-md-2 p-3">
                     <a class="text-white" (click)="onLinkClick($event)" routerLink="/contact-us"
-                        routerLinkActive="active">{{ config?.menu.contactUs }}</a>
+                        routerLinkActive="active" i18n>Contact us</a>
                 </li>
             </ul>
             <button class="p-2 btn border-0 text-white d-none d-sm-inline border rounded" [ngbTooltip]="tipContent"
@@ -63,7 +63,7 @@
             <div class="col-12 py-0 pl-1 text-left">
                 <h3 class="d-inline">{{ cartService.cart.getTotalPrice() | number:'.2'}} €</h3>
                 <div class="float-right">
-                    <button class="btn btn-outline-secondary" type="button" routerLink="/order">
+                    <button class="btn btn-outline-secondary" (click)="onLinkClick($event)" type="button" routerLink="/order">
                         Commander
                     </button>
                 </div>

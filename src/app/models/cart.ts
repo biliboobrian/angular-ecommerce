@@ -6,7 +6,11 @@ export class Cart {
 
     constructor(obj: any = null) {
         if (obj) {
-            this.items = obj.items;
+            if(obj.items) {
+                obj.items.forEach(item => {
+                    this.items.push(new CartItem(item));
+                })
+            }
         }
     }
 

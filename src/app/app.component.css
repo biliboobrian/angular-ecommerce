@@ -1,0 +1,10 @@
+.loading {
+    height: 100%;
+    width: 100%;
+    z-index: 2000;
+    background-color: #ffffffbb;
+}
+
+.center-spinner {
+    padding-top: calc(50vh - 20px);
+}

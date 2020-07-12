@@ -5,6 +5,7 @@ import { MainComponent } from './components/main/main.component';
 import { CardComponent } from './components/card/card.component';
 import { OrderComponent } from './components/order/order.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { TrackerComponent } from './components/tracker/tracker.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: 'order',
         component: OrderComponent
+      },
+      {
+        path: 'tracker/:id',
+        component: TrackerComponent
       }
     ]
   },

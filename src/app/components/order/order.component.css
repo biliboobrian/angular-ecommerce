@@ -1,0 +1,24 @@
+.card-bg {
+    background-image: url('../../../assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    filter: blur(3px) brightness(0.8);
+}
+
+.padding-order {
+    padding-top: 100px;
+}
+
+.ec-container { 
+    height: 80px;
+}
+
+.width-input {
+    min-width: 95px;
+}

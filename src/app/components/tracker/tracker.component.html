@@ -1,0 +1,69 @@
+<div class="card-bg position-fixed"></div>
+<div class="padding-tracker container-lg px-2 px-sm-5 text-white text-center">
+    <h3 class="pb-3 mb-5 mx-3 border-bottom" i18n>Track your order</h3>
+    <div class="row align-middle justify-content-center mt-5 pb-5">
+        <div class="col-6 col-md-3">
+            <div class="progress rounded-circle bg-dark badge-size m-auto">
+                <div class="progress-bar" [class.bg-success]="order?.status > 0"
+                    [class.progress-bar-striped]="order?.status == 0" [class.progress-bar-animated]="order?.status == 0"
+                    role="progressbar" [style.width]="widthStatus[0]"></div>
+                <i class="fa fa-thumbs-up icon-size" aria-hidden="true"></i>
+            </div>
+            <div class="mt-3">
+                <span class="h5" i18n>Validated</span>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="progress rounded-circle bg-dark badge-size m-auto">
+                <div class="progress-bar" [class.bg-success]="order?.status > 1"
+                    [class.progress-bar-striped]="order?.status == 1" [class.progress-bar-animated]="order?.status == 1"
+                    role="progressbar" [style.width]="widthStatus[1]"></div>
+                <i class="fa fa-fire icon-size" aria-hidden="true"></i>
+            </div>
+            <div class="mt-3">
+                <span class="h5" i18n>Preparation</span>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 mt-3 mt-md-0">
+            <div class="progress rounded-circle bg-dark badge-size m-auto">
+                <div class="progress-bar" [class.bg-success]="order?.status > 2"
+                    [class.progress-bar-striped]="order?.status == 2" [class.progress-bar-animated]="order?.status == 2"
+                    role="progressbar" [style.width]="widthStatus[2]"></div>
+                <i class="fa fa-taxi icon-size" aria-hidden="true"></i>
+            </div>
+            <div class="mt-3">
+                <span class="h5" i18n>Ready</span>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 mt-3 mt-md-0">
+            <div class="progress rounded-circle bg-dark badge-size m-auto">
+                <div class="progress-bar" [class.bg-success]="order?.status > 3"
+                    [class.progress-bar-striped]="order?.status == 3" [class.progress-bar-animated]="order?.status == 3"
+                    role="progressbar" [style.width]="widthStatus[3]"></div>
+                <i class="fa fa-check icon-size" aria-hidden="true"></i>
+            </div>
+            <div class="mt-3">
+                <span class="h5" i18n>Finish</span>
+            </div>
+
+        </div>
+    </div>
+    <div class="row border-top pt-5 m">
+        <div *ngIf="order?.status == 0" class="col-12">
+            <h1 class="pb-3">Nouvelle commande</h1>
+            <p>Votre commande n'est pas encore validée, elle le sera un moment avant sa préparation.</p>
+        </div>
+        <div *ngIf="order?.status == 1" class="col-12">
+            <h1 class="pb-3">En préparation</h1>
+            <p>Votre commande est validée, elle est actuelement en préparation.</p>
+        </div>
+        <div *ngIf="order?.status == 2" class="col-12">
+            <h1 class="pb-3">Pret à emporter</h1>
+            <p>Votre commande est préparée, elle vous attends dans votre restaurant.</p>
+        </div>
+        <div *ngIf="order?.status == 3" class="col-12">
+            <h1 class="pb-3">Terminée</h1>
+            <p>Votre commande est retirée, bon appétit !!</p>
+        </div>
+    </div>
+</div>

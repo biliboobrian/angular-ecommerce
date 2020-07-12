@@ -6,7 +6,7 @@ export class CartItem {
 
     constructor(obj: any = null) {
         if (obj) {
-            this.product = obj.product;
+            this.product = new Product(obj.product);
             this.nb = obj.nb;
         }
 

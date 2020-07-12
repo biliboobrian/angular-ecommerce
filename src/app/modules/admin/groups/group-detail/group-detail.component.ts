@@ -30,8 +30,12 @@ export class GroupDetailComponent implements OnInit {
 
     this.id = this.route.snapshot.paramMap.get('id');
     if (this.id) {
-      this.groupsService.getGroup(this.id).subscribe(group => {
-        this.groupForm.patchValue(group);
+      this.groupsService.getGroups().subscribe(groups => {
+        const group = groups.find(group=> group.id === this.id);
+        
+        if(group) {
+          this.groupForm.patchValue(group);
+        }
       })
     }
   }

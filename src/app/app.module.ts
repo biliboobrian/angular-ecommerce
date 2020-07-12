@@ -14,7 +14,8 @@ import { CardComponent } from './components/card/card.component';
 import { OrderComponent } from './components/order/order.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TrackerComponent } from './components/tracker/tracker.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +25,15 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     CardComponent,
     OrderComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    TrackerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    ReactiveFormsModule,
     NgbCollapseModule,
     HttpClientModule,
     FormsModule,

@@ -38,8 +38,14 @@ export class ProductDetailComponent implements OnInit {
 
     this.id = this.route.snapshot.paramMap.get('id');
     if (this.id) {
-      this.productsService.getProduct(this.id).subscribe(product => {
-        this.productForm.patchValue(product);
+      this.productsService.getProducts().subscribe(products => {
+        const product = products.find(product => product.id === this.id);
+
+        if(product) {
+          this.productForm.patchValue(product);
+        }
+        
+      
       })
     }
 

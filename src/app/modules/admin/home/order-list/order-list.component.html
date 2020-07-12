@@ -1,0 +1,47 @@
+<ng-template #deletion let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Supprimer une commande</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <span>êtes-vous sûr de vouloir supprimer ?</span>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Supprimer</button>
+    </div>
+</ng-template>
+
+
+<div class="row">
+    <div class="col-6 pb-2">
+        <button type="button" class="btn btn-primary" (click)="addOrder()">Ajouter</button>
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Status</th>
+            <th scope="col">Nom</th>
+            <th class="btn-width" scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let order of orders; index as i">
+            <td class="status-width">
+                <button class="btn btn-success btn-sm mr-2 px-3" (click)="changeStatus(order, -1)"><i class="fa fa-caret-left"></i></button>
+                <span>{{ getStatus(order) }}</span>
+                <button class="btn btn-success btn-sm ml-2 px-3 float-right" (click)="changeStatus(order, 1)"><i
+                        class="fa fa-caret-right"></i></button>
+            </td>
+            <td>{{ order.name }}</td>
+            <td>
+                <button class="btn btn-primary btn-sm" (click)="editOrder(order)"><i class="fa fa-edit"></i></button>
+                <button class="btn btn-danger btn-sm ml-2" (click)="confirmDelete(deletion, order)"><i
+                        class="fa fa-trash"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>

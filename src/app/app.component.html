@@ -1,2 +1,6 @@
-
+<div *ngIf="loadingService?.isLoading"  class="loading text-center center-spinner fixed-top">
+    <div class="spinner-border text-secondary" role="status">
+        <span class="sr-only" i18n>Loading...</span>
+      </div>
+</div>
 <router-outlet></router-outlet>

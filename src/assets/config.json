@@ -1,4 +1,5 @@
 {
+    "id": "mon_resto",
     "name": "Mon resto",
     "menu": {
         "card": "Notre carte",
@@ -6,6 +7,28 @@
         "takeAway": "Commander à emporter"
     },
     "welcome": "Bienvenue",
-    "description": "Spécialité au homard, boulette de viande et frite salade."
-
+    "description": "Spécialité au homard, boulette de viande et frite salade.",
+    "yourOrder":"Votre commande",
+    "tracker":"Suivez votre commande",
+    "emptyCart":"Votre panier est vide.",
+    "days": [
+        "Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"
+    ],
+    "openHours": [
+        [{"begin": "18:00", "end": "21:30"}],
+        [],
+        [{"begin": "11:30", "end": "14:30"}],
+        [{"begin": "11:30", "end": "14:30"},{"begin": "18:00", "end": "21:30"}],
+        [{"begin": "11:30", "end": "14:30"},{"begin": "18:00", "end": "21:30"}],
+        [{"begin": "11:30", "end": "14:30"},{"begin": "18:00", "end": "21:30"}],
+        [{"begin": "11:30", "end": "14:30"},{"begin": "18:00", "end": "21:30"}]
+    ],
+    "howManyDay": 3,
+    "status": [
+        "Nouveau",
+        "Validé",
+        "Préparé",
+        "Prête",
+        "Terminé"
+    ]
 }

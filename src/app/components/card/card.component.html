@@ -1,8 +1,8 @@
-<div class="card-bg"></div>
+<div class="card-bg position-fixed"></div>
 
 <div class="container-md text-white">
     <div class="padding-card-menu col-12 text-center">
-        <h2>{{ config?.menu.card }}</h2>
+        <h2 i18n>Our card</h2>
     </div>
     <div class="col-12 text-center pb-3">
         <ng-container *ngFor="let group of groups; let index = index">
@@ -12,7 +12,7 @@
         </ng-container>
 
     </div>
-    <div class="row">
+    <div class="row justify-content-center">
         <div *ngFor="let product of products" class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-3 mb-xl-0">
             <div class="h-100 card mb-4 shadow-sm text-dark mb-2 mb-xl-0">
                 <div class="ec-container bg-secondary rounded-top">
@@ -30,7 +30,7 @@
                                     <i class="fa fa-minus small"></i>
                                 </button>
                             </div>
-                            <input type="text" class="form-control text-right" [(ngModel)]="toAdd[product.id]" />
+                            <input type="number" class="form-control text-right" [(ngModel)]="toAdd[product.id]" />
                             <div class="input-group-append">
                                 <button
                                     class="btn px-3 py-0 custom-font-size text-dark border-top border-bottom rounded-0"

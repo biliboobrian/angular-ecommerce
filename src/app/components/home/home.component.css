@@ -37,6 +37,10 @@
     object-position: center;
 }
 
+.custom-price {
+    width: 180px;
+}
+
 .ec-container { 
     height: 180px;
 }

@@ -1,0 +1,21 @@
+<form [formGroup]="orderForm" autocomplete="off" (submit)="saveOrder()">
+    <div class="form-order">
+        <label for="name">Nom</label>
+        <input type="text" formControlName="name" class="form-control" id="name" aria-describedby="nameHelp"
+            placeholder="Nom .." [class.is-invalid]="submitted && !orderForm.get('name').valid">
+        <div *ngIf="submitted && orderForm.get('name').errors" class="invalid-feedback">
+            <div *ngIf="orderForm.get('name').errors.required">Le nom du ordere doit être renseigné</div>
+        </div>
+        <small id="nameHelp" class="form-text text-muted">Le nom de votre ordere ex: "Boissons", "Nos spécialités"
+            etc..</small>
+    </div>
+    <div class="form-order">
+        <label for="description">Description</label>
+        <textarea type="text" formControlName="description" class="form-control" id="description"
+            aria-describedby="descriptionHelp" placeholder="Description .."></textarea>
+        <small id="descriptionHelp" class="form-text text-muted">Une petite description de votre ordere, elle figurera
+            en dessous du ordere dans le menu et sur les commandes.</small>
+    </div>
+    <button type="submit" class="btn btn-primary">{{ (id) ? 'Modifier': 'Ajouter' }}</button>
+    <button type="button" class="btn" (click)="back()">Retour</button>
+</form>

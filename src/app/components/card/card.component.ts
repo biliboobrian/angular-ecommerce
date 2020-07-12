@@ -31,70 +31,75 @@ export class CardComponent implements OnInit, OnDestroy {
     private configService: ConfigService,
     private productsService: ProductsService,
     private groupsService: GroupsService,
-    private router: Router,
     private route: ActivatedRoute,
     private cartService: CartService
   ) { }
 
   ngOnInit() {
-
-
     this.configService.getConfig().subscribe(result => {
       this.config = result;
     });
 
     this.route.params.subscribe(params => {
-      if(params['group']) {
+      if (params['group']) {
         this.groupUrl = params['group'];
       }
 
       this.subGroups = this.groupsService.getGroups().subscribe(groups => {
         this.groups = groups;
-  
-        if(!this.groupUrl) {
-          this.groupUrl = groups[0].url;
-        }
-        
-        this.subProducts = this.productsService.getProducts(null).subscribe(products => {
-          const currentGroup = this.groups.find(group => group.url === this.groupUrl);
-          this.products = products.filter(product => product.groupId === currentGroup.id);
-
-          this.products.forEach(product => {
-            this.toAdd[product.id] = 1;
-          });
-          
-        });
+        this.createProducts();
+      });
+      this.subProducts = this.productsService.getProducts().subscribe(products => {
+        this.products = products;
+        this.createProducts();
       });
     });
   }
 
   ngOnDestroy(): void {
-    if(this.subProducts) {
+    if (this.subProducts) {
       this.subProducts.unsubscribe();
     }
-    if(this.subGroups) {
+    if (this.subGroups) {
       this.subGroups.unsubscribe();
     }
-    if(this.routeSub) {
+    if (this.routeSub) {
       this.routeSub.unsubscribe();
     }
   }
 
+  createProducts() {
+    if (this.groups && this.products) {
+      if (!this.groupUrl && this.groups[0]) {
+        this.groupUrl = this.groups[0].url;
+      }
+      
+      const currentGroup = this.groups.find(group => group.url === this.groupUrl);
+      this.products = this.products.filter(product => product.groupId === currentGroup.id);
+
+
+      this.products.forEach(product => {
+        this.toAdd[product.id] = 1;
+      });
+    }
+
+  }
+
   substract(id) {
-    if(this.toAdd[id] > 1) {
+    if (this.toAdd[id] > 1) {
       this.toAdd[id] -= 1;
     }
   }
 
   add(id) {
-      this.toAdd[id] += 1;
+    this.toAdd[id] += 1;
   }
 
   addToCart(id) {
     const product = this.products.find(p => p.id === id);
-    this.cartService.addItemToCart(product, this.toAdd[id]);
+    this.cartService.addItemToCart(product, parseInt(this.toAdd[id]));
 
     this.toAdd[id] = 1;
-  
+
   }
 }

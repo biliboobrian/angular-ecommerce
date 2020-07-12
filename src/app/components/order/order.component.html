@@ -1,1 +1,94 @@
-<p>order works!</p>
+<div class="card-bg position-fixed"></div>
+<div class="padding-order container-lg px-2 px-sm-5 mb-4">
+    <div class="bg-white border rounded p-3">
+        <h4 class="pb-4 mb-0 border-bottom" i18n>Your order</h4>
+        <div *ngFor="let cartItem of cartService?.cart?.items" class="d-flex flex-row border-bottom px-0 py-2 px-sm-2">
+            <div class=" px-0 py-2 px-sm-2 align-self-center w-100">
+                <div>{{ cartItem.product.name }}</div>
+                <div class="font-weight-light small d-none d-md-inline">{{ cartItem.product.description }}</div>
+            </div>
+
+            <div class="d-inline text-nowrap align-self-center width-input text-right">{{ cartItem.nb }} x
+                {{ cartItem.product.price | number:'.2'}} €</div>
+        </div>
+        <div *ngIf="cartService.cart.items?.length > 0" class="d-flex flex-row px-0 py-2 px-sm-2">
+            <div class="d-inline px-0 py-2 px-sm-2 align-self-center w-100 font-weight-bold" i18n>
+                Your order
+            </div>
+            <div class="d-inline text-nowrap align-self-center width-input text-right font-weight-bold">
+                {{ cartService.cart.getTotalPrice() | number:'.2'}} €
+            </div>
+        </div>
+        <div *ngIf="cartService.cart.items?.length === 0" class="d-flex flex-row px-0 py-2 px-sm-2">
+            <div class="d-inline px-0 py-2 px-sm-2 align-self-center w-100 font-weight-bold" i18n>
+                Your cart is empty.
+            </div>
+        </div>
+        <h4 *ngIf="cartService.cart.items?.length > 0" class="pt-5 pb-4 mb-0 border-bottom" i18n>Validate your order</h4>
+        <form *ngIf="cartService.cart.items?.length > 0" [formGroup]="form" class="pt-5" (ngSubmit)="onSubmit($event)">
+            <div class="row">
+                <div class="form-group col-12 col-sm-6">
+                    <label for="name" i18n>Your name <span class="text-danger">*</span></label>
+                    <input type="text" formControlName="name"
+                        [class.is-invalid]="(this.form.get('name').touched || submitted) && !this.form.get('name').valid"
+                        class="form-control" id="name" aria-describedby="nameHelp" placeholder="Entrez votre nom">
+                    <small id="nameHelp" class="form-text text-muted" i18n>Your name will be asked to take your order.</small>
+                </div>
+                <div class="form-group col-12 col-sm-6">
+                    <label for="phone" i18n>Your phone number <span class="text-danger">*</span></label>
+                    <input type="tel" formControlName="phone"
+                        [class.is-invalid]="(this.form.get('phone').touched || submitted) && !this.form.get('phone').valid"
+                        class="form-control" id="phone" aria-describedby="phoneHelp" placeholder="Votre numéro">
+                    <small id="phoneHelp" class="form-text text-muted" i18n>Your phone number could be asked to take your order.</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-12 px-5">
+                    <input
+                    class="form-check-input" formControlName="checkSave" 
+                    type="checkbox" value="" id="checkSave">
+                    <label class="form-check-label" for="checkSave" i18n>
+                        Save my name and phone number for futher orders?
+                    </label>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="form-group col-12 col-sm-6">
+                    <label for="day" i18n>Day of your order <span class="text-danger">*</span></label>
+                    <div class="d-flex">
+                        <select class="custom-select" formControlName="day"
+                            [class.is-invalid]="(this.form.get('day').touched || submitted) && !this.form.get('day').valid"
+                            id="exampleFormControlSelect1">
+                            <option *ngFor="let day of days" value="{{ day.value }}">{{ day.name }}
+                            </option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="form-group col-12 col-sm-6 mb-5">
+                    <label for="hour" i18n>Schedule to take over your order <span class="text-danger">*</span></label>
+                    <div class="d-flex">
+                        <select class="custom-select w-auto mr-2" formControlName="hour"
+                            [class.is-invalid]="(this.form.get('hour').touched || submitted) && !this.form.get('hour').valid"
+                            id="exampleFormControlSelect1">
+                            <option *ngFor="let hour of getPossibleHours()" value="{{ hour.value }}">{{ hour.name }}
+                            </option>
+                        </select> :
+                        <select class="custom-select w-auto ml-2" formControlName="min"
+                            [class.is-invalid]="(this.form.get('min').touched || submitted) && !this.form.get('min').valid"
+                            id="exampleFormControlSelect1">
+                            <option *ngFor="let min of getPossibleMins()" value="{{ min.value }}">{{ min.name }}
+                            </option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="form-group col-12 col-sm-6">
+                    <button type="submit" class="btn btn-primary text-md-center w-100">
+                        <span i18n>Validate your order</span> -
+                        {{ cartService.cart.getTotalPrice() | number:'.2'}} €</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

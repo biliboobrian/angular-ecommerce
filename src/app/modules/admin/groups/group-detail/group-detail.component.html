@@ -1,21 +1,19 @@
 <form [formGroup]="groupForm" autocomplete="off" (submit)="saveGroup()">
     <div class="form-group">
-        <label for="name">Nom</label>
+        <label for="name" i18n>Name</label>
         <input type="text" formControlName="name" class="form-control" id="name" aria-describedby="nameHelp"
             placeholder="Nom .." [class.is-invalid]="submitted && !groupForm.get('name').valid">
         <div *ngIf="submitted && groupForm.get('name').errors" class="invalid-feedback">
-            <div *ngIf="groupForm.get('name').errors.required">Le nom du groupe doit être renseigné</div>
+            <div *ngIf="groupForm.get('name').errors.required" i18n>Group name is mandatory</div>
         </div>
-        <small id="nameHelp" class="form-text text-muted">Le nom de votre groupe ex: "Boissons", "Nos spécialités"
-            etc..</small>
+        <small id="nameHelp" class="form-text text-muted" i18n>Group name ex: "Specialities", "Drinks" ...</small>
     </div>
     <div class="form-group">
-        <label for="description">Description</label>
+        <label for="description" i18n>Description</label>
         <textarea type="text" formControlName="description" class="form-control" id="description"
             aria-describedby="descriptionHelp" placeholder="Description .."></textarea>
-        <small id="descriptionHelp" class="form-text text-muted">Une petite description de votre groupe, elle figurera
-            en dessous du groupe dans le menu et sur les commandes.</small>
+        <small id="descriptionHelp" class="form-text text-muted" i18n>Short descrption of your group, will be used under your group name in the "card" section.</small>
     </div>
     <button type="submit" class="btn btn-primary">{{ (id) ? 'Modifier': 'Ajouter' }}</button>
-    <button type="button" class="btn" (click)="back()">Retour</button>
+    <button type="button" class="btn" (click)="back()" i18n>Back</button>
 </form>
