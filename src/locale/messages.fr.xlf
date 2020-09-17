@@ -308,7 +308,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="f29b0c528b09a91d94fe3ba1563f9085e0f8d040" datatype="html">
-        <target>Your order</target>
+        <target>Votre commande</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/order/order.component.html</context>
           <context context-type="linenumber">4</context>
@@ -316,7 +316,7 @@
       </trans-unit>
       <trans-unit id="14f5e4e3492d622fc99c0e5e0df6533600cbfc18" datatype="html">
         <target>
-                Your order
+                Votre commande
             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/order/order.component.html</context>
@@ -325,7 +325,7 @@
       </trans-unit>
       <trans-unit id="59d62497762d77fbe8ba30f7db960e2e34615615" datatype="html">
         <target>
-                Your cart is empty.
+                Votre commande est vide.
             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/order/order.component.html</context>
@@ -333,7 +333,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="da020184a02292e50b600e23441f16922d284a60" datatype="html">
-        <target>Validate your order</target>
+        <target>Valider votre commande</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/order/order.component.html</context>
           <context context-type="linenumber">27</context>
@@ -344,28 +344,28 @@
         </context-group>
       </trans-unit>
       <trans-unit id="326cd47ced73925a9171004f4e9ee9de132a70d9" datatype="html">
-        <target>Your name <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <target>Votre nom <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/order/order.component.html</context>
           <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
       <trans-unit id="932d0ce9458d7163a075cf5a5ba778d0b800f61f" datatype="html">
-        <target>Your name will be asked to take your order.</target>
+        <target>Votre nom vous sera demandé lors du retrait de votre commande.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/order/order.component.html</context>
           <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4fd170001acc599a240d264c895a601f2b0db38c" datatype="html">
-        <target>Your phone number <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <target>Votre numéro de téléphone <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/order/order.component.html</context>
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e9a80f6d25185a09347731b2df784fabe3813d68" datatype="html">
-        <target>Your phone number could be asked to take your order.</target>
+        <target>Votre téléphone peut être demandé au retrait de votre commande.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/order/order.component.html</context>
           <context context-type="linenumber">42</context>
@@ -373,7 +373,7 @@
       </trans-unit>
       <trans-unit id="9455bfb38601fd86e6526b49013965ded33feb8a" datatype="html">
         <target>
-                        Save my name and phone number for futher orders?
+                        Enregistrer votre nom et numéro pour vos futurs commandes?
                     </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/order/order.component.html</context>
@@ -381,112 +381,183 @@
         </context-group>
       </trans-unit>
       <trans-unit id="13f5b6c26503b9c9e005499c6170a789260c0a0a" datatype="html">
-        <target>Day of your order <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <target>Jour de retrait de votre commande <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/order/order.component.html</context>
           <context context-type="linenumber">57</context>
         </context-group>
       </trans-unit>
       <trans-unit id="75a1ddcb53d2e486e88ad602e0d31a4d12f1d3a6" datatype="html">
-        <target>Schedule to take over your order <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <target>Heure du retrait de votre commande <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/order/order.component.html</context>
           <context context-type="linenumber">69</context>
         </context-group>
       </trans-unit>
       <trans-unit id="685761aad2d44874f6b946f9ea30fd75e0fda973" datatype="html">
-        <target>Track your order</target>
+        <target>Suivre votre commande</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7cabd2c19b7385d160e56e58b2d2ab5d9ab580f1" datatype="html">
-        <target>Validated</target>
+        <target>Validée</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="0b6fad3eb83c0993d627e8b897b208ff944286a2" datatype="html">
-        <target>Preparation</target>
+        <target>En préparation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
           <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="0b0901877d837d3fda16ba161eb74368d1c75b7a" datatype="html">
-        <target>Ready</target>
+        <target>Prête</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
           <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3ea51cf415feffef55e82c7b60e9486055837661" datatype="html">
-        <target>Finish</target>
+        <target>Terminée</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
           <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
+      
+      <trans-unit id="e07b6b5bff525ba70122dfc7088ede00bf5ea97c" datatype="html">
+        <target>Nouvelle commande</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1a84328f7e0df084914918923fd612dfa1888795" datatype="html">
+        <target>Votre commande n&apos;est pas encore validée, elle le sera un moment avant sa préparation.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1555a001a5f9f7c8eb02dd4d5d648aaa9df1f7e2" datatype="html">
+        <target>En préparation</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9f0863344d0207f0a5a76d0853992b50d0008069" datatype="html">
+        <target>Votre commande est validée, elle est actuelement en préparation.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6548f083e2f9e0adde5aaf0585bc0153f94a76a6" datatype="html">
+        <target>Pret à emporter</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1329c2d905ec9707c0486c3be22c4ea5aa168ddc" datatype="html">
+        <target>Votre commande est préparée, elle vous attends dans votre restaurant.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fe42959cde1e2302fc199815d999244feb98a2a2" datatype="html">
+        <target>Retirée</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f837c258501f10c1d7be44306c72dbff3a453771" datatype="html">
+        <target>Votre commande est retirée, bon appétit !!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5c0d957a81a32e173601197f2b90f683d251f749" datatype="html">
+        <target>Terminée</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6dc0cf27b803ff95946f8b4ab772cfc60d5c1872" datatype="html">
+        <target>Votre commande est maintenant terminée.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="4e7f5f07ae8e67878f35b34bcee10e39300ff41a" datatype="html">
-        <target>Orders</target>
+        <target>Commandes</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/header/header.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c22ba03540aa3217da059f45e7eab138b51a96e2" datatype="html">
-        <target>Groups</target>
+        <target>Groupes</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/header/header.component.html</context>
           <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="48dfb134cb8d324bb45f2f9f3bd7d7afc49bc3f8" datatype="html">
-        <target>Products</target>
+        <target>Produits</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/header/header.component.html</context>
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d3a2cb0ded32106ed12b60d1f56f166daba23f42" datatype="html">
-        <target>Parameters</target>
+        <target>Paramètres</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/header/header.component.html</context>
           <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="05d17cd85ec8bdd74f1b43cf4317e12ad1d9aadf" datatype="html">
-        <target>Disconnect</target>
+        <target>Se déconnecter</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/header/header.component.html</context>
           <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f57e61988cc67a34f9d58f01c52d0c89d0096629" datatype="html">
-        <target>Delete a group</target>
+        <target>Supprimer un groupe</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/groups/group-list/group-list.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
       <trans-unit id="88ca548d59b1fa61beeb1e366a79b99cc2195503" datatype="html">
-        <target>You are about to suppress a group, continue ?</target>
+        <target>Vous êtes sur le point de supprimer un groupe, continuer ?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/groups/group-list/group-list.component.html</context>
           <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="826b25211922a1b46436589233cb6f1a163d89b7" datatype="html">
-        <target>Delete</target>
+        <target>Supprimer</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/groups/group-list/group-list.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
-        <target>Name</target>
+        <target>Nom</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/groups/group-list/group-list.component.html</context>
           <context context-type="linenumber">26</context>
@@ -504,14 +575,14 @@
         </context-group>
       </trans-unit>
       <trans-unit id="4ba866ef3987a033dead1ad386736d5307609e3e" datatype="html">
-        <target>Group name is mandatory</target>
+        <target>Le nom du groupe est requis.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/groups/group-detail/group-detail.component.html</context>
           <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="111d47e9819d179e4f6b12071fe619a5fb597b14" datatype="html">
-        <target>Group name ex: &quot;Specialities&quot;, &quot;Drinks&quot; ...</target>
+        <target>Nom du groupe ex: &quot;Spécialités&quot;, &quot;Boissons&quot; ...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/groups/group-detail/group-detail.component.html</context>
           <context context-type="linenumber">9</context>
@@ -532,7 +603,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="cda31dbd724cf5f4fa7a4274d9120651490c8a8c" datatype="html">
-        <target>Back</target>
+        <target>Retour</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/groups/group-detail/group-detail.component.html</context>
           <context context-type="linenumber">18</context>

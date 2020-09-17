@@ -78,6 +78,20 @@ export class OrderComponent implements OnInit {
     if (this.config && this.config.howManyDay) {
       let d = new Date();
 
+      let addDay = true;
+      this.config.openHours[d.getDay()].forEach((time: any, i: number) => {
+        const beginHour = parseInt(time.begin.split(':')[0]);
+          const endHour = parseInt(time.end.split(':')[0]);
+
+          if(endHour > d.getHours()) {
+            addDay = false;
+          }
+      });
+
+      if(addDay) {
+        d.setDate(d.getDate() + 1);
+      }
+
       for (let index = 0; index < this.config.howManyDay; index++) {
         possibleDays.push({ value: d.getTime(), name: this.config.days[d.getDay()] + " (" + this.getTwoDigits(d.getDate()) +"/"+ this.getTwoDigits(d.getMonth() + 1) + ")" });
         d.setDate(d.getDate() + 1);

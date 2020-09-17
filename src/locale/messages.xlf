@@ -124,7 +124,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="ngb.progressbar.value" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{getPercentValue()}}"/>%</source>
+        <source><x id="INTERPOLATION" equiv-text="{{getValue() / max | percent}}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/progressbar/progressbar.d.ts</context>
           <context context-type="linenumber">7</context>
@@ -427,6 +427,76 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
           <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e07b6b5bff525ba70122dfc7088ede00bf5ea97c" datatype="html">
+        <source>Nouvelle commande</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1a84328f7e0df084914918923fd612dfa1888795" datatype="html">
+        <source>Votre commande n&apos;est pas encore validée, elle le sera un moment avant sa préparation.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1555a001a5f9f7c8eb02dd4d5d648aaa9df1f7e2" datatype="html">
+        <source>En préparation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9f0863344d0207f0a5a76d0853992b50d0008069" datatype="html">
+        <source>Votre commande est validée, elle est actuelement en préparation.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6548f083e2f9e0adde5aaf0585bc0153f94a76a6" datatype="html">
+        <source>Pret à emporter</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1329c2d905ec9707c0486c3be22c4ea5aa168ddc" datatype="html">
+        <source>Votre commande est préparée, elle vous attends dans votre restaurant.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fe42959cde1e2302fc199815d999244feb98a2a2" datatype="html">
+        <source>Retirée</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f837c258501f10c1d7be44306c72dbff3a453771" datatype="html">
+        <source>Votre commande est retirée, bon appétit !!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5c0d957a81a32e173601197f2b90f683d251f749" datatype="html">
+        <source>Terminée</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6dc0cf27b803ff95946f8b4ab772cfc60d5c1872" datatype="html">
+        <source>Votre commande est maintenant terminée.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/tracker/tracker.component.html</context>
+          <context context-type="linenumber">70</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4e7f5f07ae8e67878f35b34bcee10e39300ff41a" datatype="html">

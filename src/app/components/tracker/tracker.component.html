@@ -50,20 +50,24 @@
     </div>
     <div class="row border-top pt-5 m">
         <div *ngIf="order?.status == 0" class="col-12">
-            <h1 class="pb-3">Nouvelle commande</h1>
-            <p>Votre commande n'est pas encore validée, elle le sera un moment avant sa préparation.</p>
+            <h1 class="pb-3" i18n>Nouvelle commande</h1>
+            <p i18n>Votre commande n'est pas encore validée, elle le sera un moment avant sa préparation.</p>
         </div>
         <div *ngIf="order?.status == 1" class="col-12">
-            <h1 class="pb-3">En préparation</h1>
-            <p>Votre commande est validée, elle est actuelement en préparation.</p>
+            <h1 class="pb-3" i18n>En préparation</h1>
+            <p i18n>Votre commande est validée, elle est actuelement en préparation.</p>
         </div>
         <div *ngIf="order?.status == 2" class="col-12">
-            <h1 class="pb-3">Pret à emporter</h1>
-            <p>Votre commande est préparée, elle vous attends dans votre restaurant.</p>
+            <h1 class="pb-3" i18n>Pret à emporter</h1>
+            <p i18n>Votre commande est préparée, elle vous attends dans votre restaurant.</p>
         </div>
         <div *ngIf="order?.status == 3" class="col-12">
-            <h1 class="pb-3">Terminée</h1>
-            <p>Votre commande est retirée, bon appétit !!</p>
+            <h1 class="pb-3" i18n>Retirée</h1>
+            <p i18n>Votre commande est retirée, bon appétit !!</p>
+        </div>
+        <div *ngIf="order?.status == 4" class="col-12">
+            <h1 class="pb-3" i18n>Terminée</h1>
+            <p i18n>Votre commande est maintenant terminée.</p>
         </div>
     </div>
 </div>

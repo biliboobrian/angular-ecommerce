@@ -1,7 +1,6 @@
 {
   "reject": [
-    "typescript",
-    "tslib",
-    "inquirer"
+    "inquirer",
+    "typescript"
   ]
 }
